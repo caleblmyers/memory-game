@@ -9,7 +9,7 @@ export default class GameItem extends React.Component {
       width: 140,
     }
 
-    let imgSrc = "/images/"
+    let imgSrc = "../../public/images/"
 
     switch (this.props.item.id) {
       case 1:
