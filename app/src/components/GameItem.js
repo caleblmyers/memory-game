@@ -1,6 +1,16 @@
 import React from "react"
-
-
+import anduin from "../images/anduin.png"
+import arthas from "../images/arthas.png"
+import chen from "../images/chen.png"
+import garrosh from "../images/garrosh.png"
+import guldan from "../images/guldan.png"
+import illidan from "../images/illidan.png"
+import kaelthas from "../images/kaelthas.png"
+import khadgar from "../images/khadgar.png"
+import saurfang from "../images/saurfang.png"
+import sylvanus from "../images/sylvanus.png"
+import thrall from "../images/thrall.png"
+import varian from "../images/varian.png"
 
 export default class GameItem extends React.Component {
   render() {
@@ -9,55 +19,55 @@ export default class GameItem extends React.Component {
       width: 140,
     }
 
-    let imgSrc = "../../public/images/"
+    let imgSrc
 
     switch (this.props.item.id) {
       case 1:
-        imgSrc += "anduin.png"
+        imgSrc = anduin
         break;
 
       case 2:
-        imgSrc += "arthas.png"
+        imgSrc = arthas
         break;
 
       case 3:
-        imgSrc += "chen.png"
+        imgSrc = chen
         break;
 
       case 4:
-        imgSrc += "garrosh.png"
+        imgSrc = garrosh
         break;
 
       case 5:
-        imgSrc += "guldan.png"
+        imgSrc = guldan
         break;
 
       case 6:
-        imgSrc += "illidan.png"
+        imgSrc = illidan
         break;
 
       case 7:
-        imgSrc += "kaelthas.png"
+        imgSrc = kaelthas
         break;
 
       case 8:
-        imgSrc += "khadgar.png"
+        imgSrc = khadgar
         break;
 
       case 9:
-        imgSrc += "saurfang.png"
+        imgSrc = saurfang
         break;
 
       case 10:
-        imgSrc += "sylvanus.png"
+        imgSrc = sylvanus
         break;
 
       case 11:
-        imgSrc += "thrall.png"
+        imgSrc = thrall
         break;
 
       case 12:
-        imgSrc += "varian.png"
+        imgSrc = varian
         break;
 
       default:
