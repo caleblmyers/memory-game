@@ -4,16 +4,9 @@ import React from "react"
 
 export default class GameItem extends React.Component {
   render() {
-    let styles = {
-      div: {
-        height: 140,
-        width: 140,
-        background: "white"
-      },
-      img: {
-        height: 140,
-        width: 140,
-      }
+    let style = {
+      height: 140,
+      width: 140,
     }
 
     let imgSrc = "/images/"
@@ -68,12 +61,12 @@ export default class GameItem extends React.Component {
         break;
 
       default:
-        styles.div.background = "black"
+        style.background = "black"
     }
 
     return (
-      <div className="border shadow game-item" style={styles.div}>
-        <img src={imgSrc} style={styles.img} alt={this.props.item.name} data-id={this.props.item.id} />
+      <div className="border bg-white shadow game-item" style={style}>
+        <img src={imgSrc} style={style} alt={this.props.item.name} />
       </div>
     )
   }

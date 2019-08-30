@@ -6,11 +6,21 @@ export default class Navbar extends React.Component {
     highScore: 0
   }
 
-  updateScore = () => {
-    this.setState({
-      score: this.state.score + 1,
-      highScore: this.state.score + 1 
-    })
+  updateScore = (addPoint) => {
+    if (addPoint && this.state.score === this.state.highScore) {
+      this.setState({
+        score: this.state.score + 1,
+        highScore: this.state.score + 1
+      })
+    } else if (addPoint) {
+      this.setState({
+        score: this.state.score + 1,
+      })
+    } else {
+      this.setState({
+        score: 0
+      })
+    }
   }
 
   render() {

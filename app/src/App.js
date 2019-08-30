@@ -67,6 +67,15 @@ const items = [
   }
 ]
 
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * arr.length)
+    const tmp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = tmp
+  }
+}
+
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -74,39 +83,23 @@ export default class App extends React.Component {
   }
 
   handleClick = (id) => {
-    console.log(items[id - 1].name)
+    shuffleArray(items)
     let addPoint = true
-    if (!items[id - 1].isGuessed) {
-      items[id - 1].isGuessed = true
-    } else {
+
+    var clickedItem = items.find(item => {
+      return item.id === id
+    })
+
+    if (!clickedItem.isGuessed) clickedItem.isGuessed = true
+    else {
       addPoint = false
+      for (let i = 0; i < items.length; i++) {
+        items[i].isGuessed = false
+      }
     }
     this.navbarElement.current.updateScore(addPoint)
+    this.forceUpdate()
   }
-
-  // state = {
-  //   score: 0,
-  //   highScore: 0
-  // }
-
-  // handleGuess(id) {
-  // console.log(items[id-1].name)
-
-  // if (!items[id-1].isGuessed) {
-  //   this.setState({
-  //     score: 0
-  //   })
-  //   for (let i = 0; i < items.length; i++) {
-  //     items[i].isGuessed = false
-  //   }
-  // } else {
-  //   items[id-1].isGuessed = true
-  //   this.setState({
-  //     score: this.state.score + 1,
-  //     highScore: this.state.score
-  //   })
-  // }
-  // }
 
   render() {
     return (
